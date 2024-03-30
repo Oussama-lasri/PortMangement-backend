@@ -34,12 +34,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter  {
         final String jwt ;
         final String userEmail ;
 
-
-//        logger.warn(String.valueOf(request.getLocalName()));
-//
-//        logger.warn(String.valueOf(response));
-//        logger.warn(String.valueOf(filterChain));
-
         if (authHeader == null || !authHeader.startsWith("Bearer ")){
             filterChain.doFilter(request , response);
               return;

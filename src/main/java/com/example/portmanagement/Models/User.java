@@ -30,6 +30,7 @@ public class User implements UserDetails {
 
     protected String password;
 //    @Column(name = "role", insertable = false, updatable = false)
+    @Enumerated(EnumType.STRING)
     protected String role;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
