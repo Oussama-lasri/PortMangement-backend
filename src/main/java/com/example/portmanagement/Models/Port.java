@@ -21,7 +21,8 @@ public class Port {
      * | - location: string
      */
     @Id
-    private int id ;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id ;
 
     @Column(nullable = false)
     private String name ;

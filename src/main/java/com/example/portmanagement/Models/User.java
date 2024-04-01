@@ -27,11 +27,10 @@ public class User implements UserDetails {
     @Column(unique = true)
     protected String email;
 
-
     protected String password;
 //    @Column(name = "role", insertable = false, updatable = false)
     @Enumerated(EnumType.STRING)
-    protected String role;
+    protected Role role;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(new SimpleGrantedAuthority(this.getClass().getSimpleName().toUpperCase()));

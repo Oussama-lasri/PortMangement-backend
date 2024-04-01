@@ -16,7 +16,7 @@ import lombok.Setter;
 
 public class Ship {
     /**
-     * - id: int                   |
+     * - id: int                            |
      * | - name: string                     |
      * | - type: string                     |
      * | - size: Size                       |
@@ -24,7 +24,8 @@ public class Ship {
      * | - port: Port
      */
     @Id
-    private int id ;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id ;
 
     private String name ;
 
@@ -32,7 +33,7 @@ public class Ship {
 
     private Size size ;
 
-    private int crewCapacity ;
+    private int crewMembersCapacity ;
 
 
 

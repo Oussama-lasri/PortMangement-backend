@@ -1,9 +1,6 @@
 package com.example.portmanagement.Models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 @Entity
 @Table(name="CrewMembers")
@@ -15,7 +12,8 @@ import lombok.*;
 public class CrewMember {
 
     @Id
-    private int id ;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id ;
 
 
     @Column(nullable = false)
@@ -27,5 +25,8 @@ public class CrewMember {
 
     @Column(nullable = true)
     private String role ;
+
+    @ManyToOne
+    private FishingTrip fishingTrip;
 
 }

@@ -1,8 +1,9 @@
-package com.example.portmanagement.Security;
+package com.example.portmanagement.Configurations;
 
 
 import com.example.portmanagement.Repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -52,4 +53,10 @@ public class ApplicationConfig {
     public LogoutHandler logoutHandler(){
         return null;
     }
+
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
+
 }
