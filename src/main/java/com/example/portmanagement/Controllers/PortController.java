@@ -48,6 +48,18 @@ public class PortController {
         return ResponseEntity.status(HttpStatus.OK).body(portService.findById(port_id));
     }
 
+    @PutMapping("{port_id}")
+    public ResponseEntity<Port> findById(@PathVariable Long port_id  , @Valid @RequestBody PortRequest portRequest) {
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(portService.update(port_id ,modelMapper.map(portRequest, Port.class)) );
+    }
+
+    @DeleteMapping("{port_id}")
+    public ResponseEntity<?> delete(@PathVariable Long port_id  ) {
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("deleted");
+    }
+
+
+
 
 
 }
